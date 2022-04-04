@@ -1,0 +1,16 @@
+Assignment 1
+1.Write a program that accepts a sentence and calculate the number of upper case letters and lower case letters and calculate the number of letters and digits.
+2.Define a function which can generate a dictionary where the keys are numbers between 1 and 20 (both included) and the values are square of keys. The function should just print the keys only.
+3.Define a function which can generate and print a tuple where the value are square of numbers between 1 and 20 (both included).
+4.Define a class named Circle which can be constructed by a radius. The Circle class has a method which can compute the area.
+5.Define a class named Rectangle which can be constructed by a length and width. The Rectangle class has a method which can compute the area.
+6.Define a class named Shape and its subclass Square. The Square class has an init function which takes a length as argument. Both classes have a area function which can print the area of the shape where Shape's area is 0 by default.
+7.Write a program to compute 1/2+2/3+3/4+...+n/n+1 with a given n.
+8.The Fibonacci Sequence is computed based on the following formula:
+f(n)=0 if n=0
+f(n)=1 if n=1
+f(n)=f(n-1)+f(n-2) if n>1
+Write a program using list comprehension to print the Fibonacci Sequence in comma separated form with a given n input by console.
+9.Write a binary search function which searches an item in a sorted list. The function should return the index of element to be searched in the list.
+10.With a given list [12,24,35,24,88,120,155,88,120,155], write a program to print this list after removing all duplicate values with original order reserved.
+
