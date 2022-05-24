@@ -1,0 +1,41 @@
+import matplotlib.pyplot as plt
+import numpy as np
+import pandas as pd
+
+from sklearn import datasets
+from sklearn.cluster import KMeans
+import sklearn.metrics as sm
+
+
+iris=datasets.load_iris()
+
+
+x=pd.DataFrame(iris.data,columns=['Sepal Length', 'Sepal Width', 'Petal Length', 'Petal Width'])
+
+
+plt.figure(figsize=(12,3))
+
+plt.subplot(1,2,1)
+plt.title("Sepal")
+plt.scatter(x['Sepal Length'],x['Sepal Width'])
+
+plt.subplot(1,2,2)
+plt.title("petal")
+plt.scatter(x['Petal Length'],x['Petal Width'])
+
+iris_k_mean_model = KMeans(n_clusters=3)
+iris_k_mean_model.fit(x)
+
+
+
+plt.figure(figsize=(12,3))
+
+plt.subplot(1,2,1)
+plt.title("Before Classification")
+plt.scatter(x['Petal Length'],x['Petal Width'],color='y')
+
+
+plt.subplot(1,2,2)
+plt.title("After Classification")
+plt.scatter(x['Petal Length'],x['Petal Width'])
+
