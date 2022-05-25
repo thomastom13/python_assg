@@ -1,0 +1,35 @@
+import numpy as np
+import pandas as pd
+import matplotlib.pyplot as plt
+
+import seaborn as sns
+
+url_a10='https://raw.githubusercontent.com/thomastom13/python_assg/main/a10%20-%20a10.csv'
+
+df=pd.read_csv(url_a10,parse_dates=['date'])
+
+# first time
+def plot_df(df,x,y,title=""):
+  plt.figure(figsize=(16,5))
+  plt.plot(x,y)
+
+plot_df(df,x=df.index,y=df.value,title="Time series")
+
+# second two plots
+df=pd.read_csv(url_a10,parse_dates=['date'])
+df.reset_index(inplace=True)
+
+df['year']=[d.year for d in df.date]
+
+
+df['month']=[d.strftime('%b') for d in df.date]
+
+
+years=df['year'].unique()
+
+fig,axes=plt.subplots(1,2,figsize=(20,7),dpi=80)
+sns.boxplot(x='year',y='value',data=df,ax=axes[0])
+
+sns.boxplot(x='month',y='value',data=df.loc[~df.year.isin([1991,2008]),:])
+
+# axes[0].set_title("Year")
