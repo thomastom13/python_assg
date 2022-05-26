@@ -1,0 +1,21 @@
+import matplotlib.pyplot as plt
+import pandas as pd
+import numpy as np
+
+url='https://raw.githubusercontent.com/thomastom13/python_assg/main/iris%20-%20iris.csv'
+
+iris=pd.read_csv(url)
+# print(iris.head())
+
+
+fig,ax=plt.subplots()
+
+for spec in ['setosa','versicolor','virginica']:
+  df=iris[iris['species']==spec]
+  plt.scatter(df['sepal_length'],df['sepal_width'],label=spec)
+
+# ax.set_xlabel('sepal_length', fontsize=16)
+# ax.set_ylabel('sepal_width', fontsize=16)
+
+ax.legend(loc='best', fancybox=True,  fontsize=16)
+ax.grid()
